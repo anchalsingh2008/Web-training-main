@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+     <script src="js/validator.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-md-6 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Login</h3>
+                        <form method=" get or post " action="url">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username" onkeyup="moveToUp()" />
+                                <span id="nameEror" class="" style="color: red; display: none;">username is mandatory</span>
+                            </div>
+                            <div class="form-group"></div>
+                                <label for="username">full Name</label>
+                                <input type="text" class="form-control"  id="fuullname" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter password">
+                            </div>
+                            <button type="button" onclick="myfunction()" id="btn" class="btn btn-primary btn-block">Login</button>
+                        </form>
+                    </div>
+                </div>
+
+            <div class="col-md-6">
+                <div class="card p-5">
+                    <div class="card-body"></div>
+                        <h3 class="card-title text-center">Login</h3>
+                        Name:- <span id="name"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!-- 
+Java-script  ->Client side
+->validation, animation, website, two-binding, 
+var->global  let->local varaible,  const->,  
+-->
+<script>
+//     var a =10;
+//     console.log(a);
+//    var inputUsername = document.getElementById('username');// get the object , 
+//    console.log(inputUsername.value)
+
+//event keyup, onclick, mouseOver, 
+ //1.var btnObj = document.getElementById('btn')
+ //2 using function onlick function
+ function myfunction()
+ {
+    //console.log("asdfasd");
+    var inputUsername = document.getElementById('username');// get the object , 
+    var pass = document.getElementById('password');// get the object , 
+    var name = document.getElementById('name');// get the object ,  
+    if(!inputUsername.value.length>0){
+        document.getElementById('nameEror').style.display = "block";
+       // alert("username field is mandatory");
+    }
+    else if(!pass.value.length>0){
+        alert("pass field is mandatory");
+    }
+    else if(!name.value.length>0){
+        alert('name field manadatory');
+    }else{
+        alert("application submite")
+    }
+
+ }
+
+</script>
